@@ -4,7 +4,7 @@ Experiência digital cinematográfica para a Elas Cerimonial (Assessoria e Cerim
 
 ## Estrutura do projeto
 
-- `/site/index.html` — Home completa (prólogo cinematográfico + 6 capítulos), pronta para visualizar direto no navegador ou hospedar via GitHub Pages.
+- `/index.html` — Home completa (prólogo cinematográfico + 6 capítulos), na raiz do projeto para deploy direto em Vercel, Netlify ou GitHub Pages sem configuração adicional.
 - `/docs/relatorio-pesquisa.md` — Pesquisa com 34 referências internacionais de wedding/luxury/destination wedding planners.
 - `/docs/conceito-criativo.md` — Conceito criativo definitivo, arquitetura de UX/UI, wireframes, tipografia, paleta, estratégia de conversão.
 
