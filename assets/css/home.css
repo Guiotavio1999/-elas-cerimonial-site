@@ -1,0 +1,99 @@
+/* ---------- PROLOGUE ---------- */
+#prologue{
+  position:fixed;inset:0;background:var(--near-black);z-index:1000;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+#prologue .line{
+  position:absolute;font-family:var(--serif);font-style:italic;color:#f2e9e2;
+  font-size:clamp(22px,4vw,42px);text-align:center;opacity:0;padding:0 24px;letter-spacing:0.01em;
+}
+#prologue .reveal-bg{
+  position:absolute;inset:0;background-size:cover;background-position:center;
+  opacity:0;filter:blur(18px) brightness(.55);transform:scale(1.1);
+}
+#prologue .logo-reveal{position:relative;z-index:5;width:170px;opacity:0;}
+#skip-intro{
+  position:absolute;bottom:28px;right:28px;color:#e9dcd4;font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  opacity:.55;z-index:20;cursor:pointer;background:none;border:1px solid rgba(255,255,255,.3);
+  padding:9px 16px;border-radius:2px;font-family:var(--sans);
+}
+#skip-intro:hover{opacity:1;}
+
+/* ---------- Chapter shell ---------- */
+.chapter{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 7vw 100px;}
+.chapter-inner{width:100%;max-width:1280px;margin:0 auto;}
+.chapter-number{font-family:var(--serif);font-style:italic;color:var(--nude);font-size:14px;letter-spacing:2px;margin-bottom:6px;display:block;}
+
+/* ---------- Chapter 1 : Hero ---------- */
+#cap1{background:var(--near-black);color:var(--offwhite);min-height:100vh;padding:0;align-items:flex-end;}
+#cap1 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;opacity:.55;}
+#cap1 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(24,19,16,.15) 0%, rgba(24,19,16,.55) 65%, rgba(24,19,16,.9) 100%);}
+#cap1 .hero-content{position:relative;z-index:3;padding:0 7vw 90px;max-width:820px;}
+#cap1 .hero-content .eyebrow{color:var(--nude);}
+#cap1 h1{color:var(--offwhite);font-size:clamp(34px,5.4vw,64px);line-height:1.2;margin:16px 0 30px;}
+#cap1 h1 .word{display:inline-block;opacity:0;transform:translateY(24px);}
+.cta-row{display:flex;gap:28px;align-items:center;flex-wrap:wrap;}
+#cap1 .btn-primary{color:var(--near-black);}
+#cap1 .btn-primary:hover{color:var(--offwhite);border-color:var(--offwhite);background:transparent;}
+#cap1 .link-underline{color:var(--offwhite);border-bottom-color:rgba(251,246,242,.5);}
+#cap1 .scroll-cue{
+  position:absolute;bottom:26px;left:7vw;z-index:3;color:var(--offwhite);
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.7;display:flex;align-items:center;gap:10px;
+}
+#cap1 .scroll-cue .line{width:1px;height:34px;background:rgba(251,246,242,.5);position:relative;overflow:hidden;}
+#cap1 .scroll-cue .line::after{content:'';position:absolute;top:0;left:0;width:100%;height:40%;background:var(--offwhite);animation:scrollcue 2.2s infinite;}
+@keyframes scrollcue{0%{top:-40%;}100%{top:110%;}}
+
+/* ---------- Chapter 2: Jornada ---------- */
+#cap2{background:var(--offwhite);}
+#cap2 .head{max-width:640px;margin-bottom:64px;}
+#cap2 .head h2{font-size:clamp(30px,4vw,46px);margin-top:14px;}
+.timeline{position:relative;padding-left:2px;}
+.timeline::before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,var(--nude),var(--champagne));}
+.tl-item{display:grid;grid-template-columns:22px 1fr;gap:26px;padding:28px 0;opacity:0;transform:translateY(22px);}
+.tl-dot{width:9px;height:9px;border-radius:50%;background:var(--bronze);margin-top:6px;position:relative;z-index:2;}
+.tl-item h3{font-size:22px;margin-bottom:8px;}
+.tl-item p{max-width:560px;color:var(--brown);opacity:.85;font-size:15px;}
+.section-cta{margin-top:20px;}
+
+/* ---------- Chapter 3: Bastidores ---------- */
+#cap3{background:var(--champagne);}
+#cap3 .split{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;}
+#cap3 .photo-wrap{position:relative;overflow:hidden;border-radius:4px;}
+#cap3 .photo-wrap img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1.4s ease;}
+#cap3 .text h2{font-size:clamp(28px,3.6vw,40px);margin:14px 0 22px;}
+#cap3 .text .anchor{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--bronze);margin:22px 0;line-height:1.5;}
+#cap3 .text p{font-size:15.5px;opacity:.88;margin-bottom:16px;}
+@media (max-width:900px){#cap3 .split{grid-template-columns:1fr;gap:36px;}}
+
+/* ---------- Chapter 4: Momentos / Serviços ---------- */
+#cap4{background:var(--near-black);color:var(--offwhite);padding:0;}
+#cap4 .head{padding:120px 7vw 40px;max-width:640px;}
+#cap4 .head .eyebrow{color:var(--nude);}
+#cap4 .head h2{color:var(--offwhite);font-size:clamp(30px,4vw,46px);margin-top:14px;}
+.service-panel{position:relative;min-height:56vh;display:flex;align-items:center;border-top:1px solid rgba(251,246,242,.12);padding:60px 7vw;overflow:hidden;}
+.service-panel .bgtint{position:absolute;inset:0;opacity:.16;}
+.service-panel .sv-num{position:absolute;top:40px;right:7vw;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--nude);opacity:.6;}
+.service-panel .sv-content{max-width:640px;position:relative;z-index:2;}
+.service-panel h3{color:var(--offwhite);font-size:clamp(26px,3.2vw,38px);margin:12px 0 16px;}
+.service-panel p{color:#e9dfd8;font-size:15px;max-width:480px;margin-bottom:18px;opacity:.85;}
+.service-panel .case{font-size:13px;color:var(--nude);font-style:italic;font-family:var(--serif);border-left:2px solid var(--bronze);padding-left:14px;}
+.cap4-cta{padding:70px 7vw 90px;text-align:center;border-top:1px solid rgba(251,246,242,.12);}
+
+/* ---------- Chapter 5: Histórias ---------- */
+#cap5{background:var(--offwhite);}
+#cap5 .head{max-width:640px;margin-bottom:56px;}
+#cap5 .head h2{font-size:clamp(30px,4vw,46px);margin-top:14px;}
+.stories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+@media (max-width:900px){.stories-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.stories-grid{grid-template-columns:1fr;}}
+.stories-cta{text-align:center;margin-top:52px;}
+
+/* ---------- Chapter 6: CTA final ---------- */
+#cap6{background:var(--nude);min-height:70vh;align-items:center;text-align:center;position:relative;overflow:hidden;}
+#cap6::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 30%, rgba(255,255,255,.35), transparent 60%);}
+#cap6 .chapter-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;}
+#cap6 h2{font-size:clamp(30px,5vw,54px);max-width:760px;margin:18px 0 34px;}
+#cap6 .btn-primary{background:var(--brown);border-color:var(--brown);color:var(--offwhite);}
+#cap6 .btn-primary:hover{background:transparent;color:var(--brown);}
+#cap6 .whats-note{margin-top:22px;font-size:12px;letter-spacing:1px;opacity:.7;}
